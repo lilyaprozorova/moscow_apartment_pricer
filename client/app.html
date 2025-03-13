@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="app.js"></script>
+	<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<div class="img"></div>
+
+<form class="form">
+	<h2>Год постройки дома</h2>
+	<input class="area" type="number" id="uiYearBuilt" name="uiYearBuilt" min="1880" max="2023" value="1964">
+	<h2>Расстояние до ближайшего метро (в метрах)</h2>
+    <input class="area" type="text" id="uiDistSub" class="floatLabel" name="DistSub" placeholder="925">
+
+	<h2>Площадь (кв.м.)</h2>
+    <input class="area" type="text" id="uiFootage" class="floatLabel" name="Footage" placeholder="45">
+	<h2>Этаж</h2>
+	<input class="area" type="number" id="uiFloor" name="floor" min="1" max="50" value="5">
+	<h2>Этажeй в здании</h2>
+	<input class="area" type="number" id="uiMaxFloor" name="maxFloor" min="1" max="50" value="10">
+	<h2>Расстояние до центра города (в километрах)</h2>
+    <input class="area" type="text" id="uiDistCenter" class="floatLabel" name="DistCenter" placeholder="12">
+
+</form>
+	
+<form class="form">
+	 <h2>Количество комнат</h2>
+	<div class="switch-field">
+		<input type="radio" id="radio-rooms-1" name="uiRoom" value="1"/>
+		<label for="radio-rooms-1">1</label>
+		<input type="radio" id="radio-rooms-2" name="uiRoom" value="2" checked/>
+		<label for="radio-rooms-2">2</label>
+		<input type="radio" id="radio-rooms-3" name="uiRoom" value="3"/>
+		<label for="radio-rooms-3">3</label>
+	</div>
+	<h2>Тип метро</h2>
+	<div class="switch-field">
+		<input type="radio" id="radio-bhk-1" name="uiSubType" value="0" checked/>
+		<label for="radio-bhk-1">Метро</label>
+		<input type="radio" id="radio-bhk-2" name="uiSubType" value="1"/>
+		<label for="radio-bhk-2">МЦК</label>
+		<input type="radio" id="radio-bhk-3" name="uiSubType" value="2"/>
+		<label for="radio-bhk-3">МЦД</label>
+	</div>
+	<h2>Материал</h2>
+	<div class="switch-field">
+		<select class="area" name="" id="uiMaterials">
+			<option value="Панель" disabled="disabled" selected="selected">Выбрать...</option>
+				<option>Панель</option>
+				<option>Кирпич</option>
+		  </select>
+	</div>
+		<h2>Админ. округ</h2>
+	<div>
+  <select class="area" name="" id="uiAreas">
+    <option value="ЮВАО" disabled="disabled" selected="selected">Выбрать...</option>
+		<option>ЦАО</option>
+        <option>САО</option>
+  </select>
+</div>
+	<button class="submit" onclick="onClickedEstimatePrice()" type="button">Estimate Price</button>
+	<div id="uiEstimatedPrice" class="result">
+</div>
+<div class="bottom"></div>
+</body>
+</html>
